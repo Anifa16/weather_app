@@ -5,7 +5,7 @@
 }
 .contianer{
     width: 1000px;
-    height: 600px;
+    height: 650px;
     border: 1px black solid;
     background-color:bisque;
     margin-left: 370px;
@@ -68,4 +68,10 @@ body{
     background-size: cover;
 }
 
+.quotes{
+    width: 600px;
+    height: 150px;
+    margin-left: 200px;
+    margin-top: 20px;
 
+}
