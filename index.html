@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="main.js"></script>
+    <link rel="icon" href="./image.png">
+    <title>The Waather Is Better On The Other Side</title>
+</head>
+<body>
+   <div class="contianer">
+    <div class="weather-image">
+        <form name="weather" method="POST">
+        <input type="text" name="city" placeholder="Enter city name" >
+        <br>
+        <button type="submit" name="submit">Search</button>
+     </form>
+    </div>
+     <main class="weather-loading loading">
+
+        <Section>
+            <div class="city"><h2>Mill Creek WA</h2></div>
+            <div class="date">March 16th 2023</div>
+        </Section>
+        <div class ="current"> 
+        <div class="temp"><span>54°ƒ</span></div>
+        <img class="icon" src="" alt="Weather icon">
+        <div class="description"><p> It Clouddy Today</p></div>
+        <div class="humidity"></div>
+        <div class="wind"></div>
+        <div class="dailyquotes"> 
+           <hr>
+            <h4>Today's Quote</h4>
+            <hr>
+            <div id="qoute">
+                
+            </div>
+        </div>
+        </div>
+     </main>
+</div>
+</body>
+</html>

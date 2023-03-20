@@ -1,0 +1,23 @@
+this is weather app I built using javescript and html as well as css 
+in this project I'm using the open weather api to get my data for every city 
+then I desplay the users need information using the wather api 
+
+
+
+// How to get a token if needed for your API this is how you go about getting your reuest
+//getToken function
+const getToken = async()=>{
+    const response = await fatch( 'your url or reuest url'{
+        method: 'POST',
+        body: 'grant_type = client_credentials',
+        headers:{
+            'Authorization': 'Besic' + btoa(`${clientid}:${clientSecret}`)
+            'content-Type': application/x-www-form-url-urlencoded'
+        }
+    });
+    const data =await response.json()
+    const token =data.access_token
+    return token
+}
+
+328dd91e2afb1c2740d935070090b7a2
