@@ -1,9 +1,9 @@
-const form = document.forms["weather"];
+const form = document.forms["weather"];// coonect to my html form 
 
-form.addEventListener("submit", async (event) => {
+form.addEventListener("submit", async (event) => { // this here is submit eventlis
   event.preventDefault();
 
-  const cityInput = form.querySelector('[name="city"]');
+  const cityInput = form.querySelector('[name="city"]'); 
   const city = cityInput.value;
 
   const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=328dd91e2afb1c2740d935070090b7a2`)
@@ -23,30 +23,49 @@ const displayweather = (data) => {
   document.querySelector(".date").innerText = new Date().toLocaleDateString();
   document.querySelector(".temp").innerText = Math.ceil((temp - 273.15) * 9/5 + 32) + "°F";
   document.querySelector(".description").innerText = description;
-  let image;
   switch (description) {
-    case "sunny":
-      image = 'url(/images/sunny.jpg)';
+    case "sunny" || "clear sky":
+      Image = 'url(/images/sunny.jpg)';
       break;
-    case "cloudy":
-      image = 'url(/images/cloudy.gif)';
+    case "cloudy" || "overcast clouds":
+      Image = 'url(/images/cloudy.gif)';
       break;
     case "snow":
-      image = 'url(/images/snow.gif)';
+      Image = 'url(/images/snow.gif)';
       break;
-    case "rain":
-      image = 'url(/images/rain.gif)';
+    case "rain" ||'light rain':
+      Image = 'url(/images/rain.gif)';
       break;
     default:
-      image = '';
+      Image = 'url(/images/rain.gif)';
       break;
   }
-  document.querySelector(".contianer").style.backgroundImage = image;
+  document.querySelector(".contianer").style.backgroundImage = Image;
   document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
   document.querySelector(".wind").innerText = "Wind Speed: " + speed + "km/h";
 
   document.body.style.backgroundImage = `url("https://source.unsplash.com/1600x900/?${name}")`;  
 };
+
+
+
+  const quote = document.getElementById("quote");
+  const author = document.getElementById("author");
+
+  const api_url = 'https://api.quotable.io/random';
+
+  async function getQuote(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data)
+
+    quote.innerText = data.content;
+    author.innerText = data.author;
+  }
+
+  getQuote(api_url);
+
+
 
 
 
