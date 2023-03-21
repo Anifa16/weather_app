@@ -6,7 +6,7 @@ form.addEventListener("submit", async (event) => { // this here is submit eventl
   const cityInput = form.querySelector('[name="city"]'); 
   const city = cityInput.value;
 
-  const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=328dd91e2afb1c2740d935070090b7a2`)
+  const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`)
     .then(response => response.json());
 
   displayweather(data);
